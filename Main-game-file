@@ -1,0 +1,51 @@
+
+
+mos_rest_helth = 3
+defin = 2
+mos_hp = 3
+mos_atk = 2
+hp_cap = 10
+import random
+gold = 0
+atkpow = 2
+hp = 10
+while hp > 0:
+  if hp > hp_cap:
+    hp = hp_cap
+  print ("you have " + str(hp) + " hp. you have " + str(atkpow) + " atkpower. you have " + str(gold) + " gold")
+  print ()
+  print("you are in a room there are 2 doors one to your left and another to your left ")
+  LR = input ("Left or right")
+  if LR == "left" or LR == "Left" or LR == "right" or LR == "Right":
+    x = random.randint(1,5)
+    if x == 1: 
+      while mos_hp != 0:
+        act = input ("there is a monster A or D ")
+        if act == "A":
+          mos_hp -= atkpow
+          print ("you killed the monster")
+          print ()
+        if act == "D":
+          mos_atk -= defin
+          mos_atk = 2
+      mos_atk += 1
+      mos_hp += 2
+      gold += 2
+      
+      mos_hp += mos_rest_helth
+    if x == 2:
+      print ("you found gold")
+      print ()
+      gold += 1
+    if x == 3:
+      upgrade = input ("you found a shop you can increas a stat ")
+      print ()
+    if x == 4:
+      print ("you were hit by a trap 1 hp lost")
+      print ()
+      hp -= 1
+    if x == 5:
+      print ("you found a bandige +4 hp")
+      print ()
+      hp += 4
+    
